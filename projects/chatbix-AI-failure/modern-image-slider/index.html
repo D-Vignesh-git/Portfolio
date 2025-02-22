@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+        <div class="slider" style="--quantity:9">
+            <div class="item" style="--position:1"><img src="/images/luffy1.png" alt=""></div>
+            <div class="item" style="--position:2"><img src="/images/zoro1.png" alt=""></div>
+            <div class="item" style="--position:3"><img src="/images/sanji1.png" alt=""></div>
+            <div class="item" style="--position:4"><img src="/images/nami.png" alt=""></div>
+            <div class="item" style="--position:5"><img src="/images/usopp1.png" alt=""></div>
+            <div class="item" style="--position:6"><img src="/images/robin.png" alt=""></div>
+            <div class="item" style="--position:7"><img src="/images/brook.png" alt=""></div>
+            <div class="item" style="--position:8"><img src="/images/franky.png" alt=""></div>
+            <div class="item" style="--position:9"><img src="/images\brook.png" alt=""></div>
+        </div>
+        <button id="stopBtn">Stop</button>
+
+
+    <script>
+        const Stop = document.getElementById('stopBtn');
+        const Container = document.querySelector('.container');
+        const slider = document.querySelector('.slider');
+        let isStopped = false;
+        Stop.onclick = () => {
+            if (!isStopped) {
+                slider.style.position = "static";
+                slider.style.animation = "none";
+                slider.style.display = "flex";
+                slider.style.justifyContent = "center";
+                slider.style.alignItems = "center";
+                slider.style.gap = "10px";
+                slider.style.perspective = "none";
+                slider.style.width = "100%";
+                slider.style.height = "100%";
+
+                document.querySelectorAll(".item").forEach(item => {
+                    item.style.position = "static";
+                    item.style.transform = "none";
+                });
+                document.querySelectorAll(".item img").forEach(img => {
+                    img.style.boxShadow = "none";
+                    img.style.borderRadius="0";
+                });
+
+                Stop.textContent = "Start";
+                    Stop.style.color="Green";
+             
+                isStopped = true;
+            } else {
+                slider.style.position = "absolute";
+
+                slider.style.animation = "runslide 20s linear infinite";
+                slider.style.display = "block";
+                slider.style.width = "200px";
+                slider.style.height = "250px";
+                document.querySelectorAll(".item").forEach(item => {
+                    item.style.position = "absolute";
+                    item.style.transform = "rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(550px)";
+                });
+                document.querySelectorAll(".item img").forEach(img => {
+                    img.style.boxShadow = "2px 2px 2px 3px rgba(0, 0, 0, 0.562)";
+                    img.style.borderRadius="50%";
+                });
+
+                Stop.textContent = "Stop";
+                Stop.style.color="rgb(240, 98, 98)";
+
+                isStopped = false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,467 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+body{
+    height:auto;
+
+    
+}
+.container{
+    background-color: #dad3d3;
+    min-width:1250px;   
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(19,25,33,255);
+    color: white;
+    height:60px;
+    min-width: 1250px;
+    position: sticky;
+    width:100%;
+    z-index: 5;
+    top:0;
+   
+}
+header h1{
+    font-size: 34px;
+    color:white;
+}
+header  span{
+    font-size: 19px;
+    color:white;
+    text-align: center;
+    margin-left: -44px;
+    margin-top: -5px;
+}
+header .deliver i{
+    font-size: 22px;
+    color:white;
+    position: absolute;
+    bottom:0;
+    left:0;
+    
+}
+header .deliver{
+    display: flex;
+    position: relative;
+    padding-left:25px;  
+    white-space: nowrap; 
+    
+}
+header .deliver p,header .sign #acc1,header .return-box .Return {
+    font-size: 13px;
+}
+header .deliver p span,header .sign #acc, header .return-box .orders,#cart{
+    font-weight: 600;
+    font-size:15px;
+}
+header .all input{
+    width:550px;
+    height:40px;
+    border:none;
+    font-size:20px;
+    
+    padding:12px;
+}
+header .all{
+    display: flex;
+    width:40%;
+    border:none;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-left: 20px;
+    margin-right: -10px;
+}
+header .all .all2{
+    border:none;
+    background-color: white;
+    color:rgb(119, 110, 110);
+    border-radius:5px 0 0  5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:11px;
+    gap:2px;
+    font-size: 13px;
+    background-color: #e6e6e6;
+}
+header .all .all2 i{
+    font-size:10px;
+}
+header .all #search{
+    font-size: 30px;
+    background-color: white;
+    color:rgba(99,84,63,255);
+    border-radius:0 4px 4px 0;
+    padding:5px;
+    background-color:#febd69
+}
+header #lang{
+    font-weight: 600;
+    font-size:15px;
+}
+header #lang-arrow,#lang-arrow1{
+    font-size:9px;
+    padding-left:4px;
+}
+#lang-arrow{
+    color:rgb(119, 110, 110); 
+}
+#cart-icon{
+    font-size: 40px;
+    
+}
+.cart-box{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+#cart{
+    margin-top: 22px;
+}
+header .deliver p{
+    color:rgba(153,158,144,255);
+}
+.country{
+    display: flex;
+    justify-content: center;
+    gap:5px;
+    align-items: center;
+}   
+.all:focus-within{
+    border:3px solid rgb(231, 115, 73);
+    outline: none;
+}
+.all input:focus{
+    outline: none;
+}
+.button-next.active{
+    border:2px solid rgb(227, 227, 235);
+    outline: 2px solid rgb(143, 130, 130);
+    border-radius:8px;
+}
+.button-prev.active{
+    border:2px solid rgb(227, 227, 235);
+    outline: 2px solid rgb(143, 130, 130);
+    border-radius:8px;
+}
+
+.nav{
+    position: relative;
+    z-index: 3;
+    background-color: #232f3e;
+    display: flex;
+    align-items: center;
+    min-width: 1250px;
+    height:40px;
+    gap:15px;
+    color:white;
+    padding:25px 0;
+    font-size: 14px;
+    font-family:"Amazon Ember", Arial, sans-serif;
+  
+}
+.nav-all,.fresh,.nav-links{
+    display: flex;
+    align-items: center;  
+ 
+    
+}
+.nav-links{
+    gap:15px;
+}
+.nav-links a{
+    color:white;
+}
+.fresh{
+    gap:2px;
+}
+.fresh i{
+    margin-top: 4px;
+}
+.slider-container img{
+    width:100%;
+    mask-image: linear-gradient(to bottom, rgb(212, 71, 71) 50%,  transparent 100% );
+
+}
+.slider-container{
+  display: flex;
+  overflow-x: hidden;
+ position:relative;
+ min-width:1250px;
+}
+
+.slider-container .button-prev,.button-next{
+    height:150px;
+    width:50px;
+    position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center  ;
+  
+ 
+}
+.slider-container .button-prev .prevbt,.button-next .nextbt{
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    color:white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+   cursor: pointer;
+    
+}
+.button-prev{
+    top:80px;
+    left:20px;
+    z-index: 1;
+}
+.button-next{
+    top:80px;
+ right:20px;
+    z-index: 1;
+}
+.slide{
+    
+}
+.container-explore{
+ 
+    display: flex;
+    justify-content: center;
+    margin-top: -250px;
+    padding-left:20px;
+    padding-right: 20px;    
+    gap:20px;
+   flex-wrap: wrap;
+   min-width: 1250px;
+   
+   
+}
+.container-images{
+    padding:20px;
+    height:450px;
+    width:311px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+   
+   
+}
+.container-explore h1,.container-3 h1{
+    font-size: 21px;
+}
+.images{
+    display: flex;
+    flex-wrap: wrap;
+  gap:10px;
+  justify-content: center;
+   padding-top:10px;    
+}
+.image3,.image4{
+    padding-top:10px;
+}
+.images img{
+    width:129px;
+}
+.images p{
+    font-size: 12px;
+}
+.image1,.image2,.image3,.image4{
+    width:129px;
+}
+.product-slider{
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    background-color: white;   
+    position: relative; 
+}
+.product-slider h1{
+    font-size: 21px;
+    padding:20px 10px;
+}
+.product-slider-images{
+    display: flex;
+    
+    overflow-x:auto;
+    align-items: center;
+    gap:5px;
+    padding:10px 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.product-slider-images img{
+    max-width: 270px;
+    max-height: 200px
+}
+.link{
+    font-size:13px;
+    color:blue;
+    position: absolute;
+    bottom:20px;
+}
+.overlay{
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width:100%;
+    height:100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    transition:opacity 0.3 ease;
+}
+.overlay.active{
+    visibility: visible;
+    opacity: 1;
+}
+.button-prev-prdouct,.button-next-product{
+    width:40px;
+    height:90px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+}
+.button-prev-prdouct .prevbt-product,.button-next-product .nextbt-product{
+    outline:none;
+    font-size: 28px;
+    background-color: transparent;
+    border:none;
+    color:black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 1;
+    cursor: pointer;
+}
+.button-next-product{
+    right:0;
+}
+.container-3{
+   
+    
+}
+.container-3{
+    height:450px;
+    width:312px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+    margin-top:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:20px;
+    overflow: hidden;
+    
+}
+.container-3 p{
+    font-size: 15px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+.container-3 h5{
+    color: #0f1111;
+    margin-bottom: 20px;
+    font-size: 21px;
+    display: flex;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+.container-3 h5 span{
+    color: #0f1111;
+    font-size: 12px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+.container-3 h6, .container-3 h6 span{
+    font-size: 13px;
+    color:  #565959;
+    margin-bottom: 20px;
+}
+.container-3 h6 span{
+    text-decoration: line-through;
+}
+.mrp{
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    gap:5px;
+}
+.image-slider {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.btt{
+    
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(55,71,90,255);
+    text-align:center;
+    color:white;  
+    min-width:1250px;  
+}
+.btt:hover{
+    background-color: rgba(55, 71, 80, 255);
+}
+hr{
+  border:none;
+  margin-top: 50px;
+    
+}
+.footer1{
+    height:600px;
+   width:100%;
+    background-color: rgba(35,47,62,255); 
+    padding:30px;
+    display: flex;
+    justify-content: center;
+   gap:140px;
+   flex-wrap: wrap;
+   min-width:1250px;
+}
+.col1 h6, .col2 h6, .col3 h6, .col4 h6{
+    font-size: 16px;
+    color:white;
+}
+.col1 p, .col2 p, .col3 p, .col4 p{
+    font-size: 14px;
+    color:white;
+}
+.col1,.col2,.col3,.col4{
+   display: flex;
+   flex-direction: column;
+   gap:20px;
+}
+footer hr{
+    margin-top: -380px;
+    border:none;
+    height:1px; 
+    background-color: rgb(117, 111, 111);
+    
+}
+@media (max-width:1343px){
+   .container-explore{
+    justify-content: space-around;
+   }
+
+}
+

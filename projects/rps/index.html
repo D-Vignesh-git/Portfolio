@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+     <p>Computer : <span id="computer-score">0</span></p>
+     <p id="you">You : <span id="your-score">0</span></p>
+        <div class="image-container">
+            <img src="rock-paper-scissors-296854_1920.png" onclick="playgame('rock')" alt="">
+            <img src="rock-paper-scissors-296855_1920.png" onclick="playgame('paper')" alt="">
+            <img src="rock-paper-scissors-296853_1920.png" onclick="playgame('scissor')" alt="">
+        </div>
+        <h3 id="h3">You choose <span id="your-choice"></span></h3>
+        <h3>Computer choose <span id="computer-choice"></span></h3>
+       <h1 id="result"></h1>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

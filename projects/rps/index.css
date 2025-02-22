@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    height:100vh;
+    background-image: url('rb_8387-removebg.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:right;
+    padding-left: 30px;
+}
+.container{
+    width:46%;
+    height:80vh;
+    border:1px solid rgb(224, 204, 204);
+    padding: 40px 30px;
+    background: linear-gradient(to left, rgb(231, 229, 229),rgb(99, 99, 97));
+    border-radius: 30px;
+}
+p{
+    text-align: end;
+    font-size: 20px;
+}
+#you{
+    margin-top: 12px;
+}
+span{
+    font-weight: bold;
+}
+.image-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 40px;
+    justify-content: center;
+    gap:20px;
+
+
+    
+}
+.image-container img{
+    width:150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#h3{
+    margin-top: 30px;
+}
+h3{
+    margin-top: 10px;
+    font-size: 21px;
+    text-align: center;
+    color: rgb(29, 28, 28);
+}
+h3 span{
+    font-weight: bold;
+    color: black;
+    font-size: 19px;
+}
+h1{
+    margin-top: 30px;
+    text-align: center;
+    background:linear-gradient(to right, rgb(231, 229, 229),rgb(167, 167, 162));
+    border: none;
+    display: inline-block;
+    width:100%;
+    border-radius: 20px;
+}
+.redtext,#computer-score{
+    color:red;
+}
+.greentext,#your-score{
+    color:green;
+}
+
+@media(width<=1024px){
+    .image-container img{
+        width:130px;
+    }
+    
+}
+@media(width<=768px){
+    body{
+        display: flex;
+        justify-content:center;
+        background-image: none;
+        padding-left: 0;
+    }
+    .container{
+        width:80%;
+        height:auto;
+    }
+    .image-container{
+        grid-template-columns: 1fr 1fr;
+        gap:15px;
+        justify-items: center;
+    }
+    .image-container img:nth-child(3){
+        grid-column: 1 / span 2;
+        justify-self: center;
+    }
+    .image-container img{
+        width:120px;
+    }
+}
+@media(width<=365px){
+    .image-container img{
+        width:90px;
+    }
+}
+

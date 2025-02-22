@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            
+        }
+        .slider-container {
+            z-index: 100;
+            position: relative;
+            width: 50%;
+            height: 400px; 
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.1); 
+            margin-top: 300px;
+            overflow: hidden;
+            
+            box-shadow: 0 0 50px rgb(61, 56, 56);
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+            
+        }
+        .slide {
+            height:400px;
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .slide img {
+           opacity:1;
+            width:60%;
+            height:90%;
+            object-fit: contain;
+            border-radius: 10px;
+            
+        }
+        .prevbt, .nextbt {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background-color: rgb(211, 103, 103);
+            border: none;
+            border-radius: 50%;
+            padding: 10px 20px;
+            z-index: 100;
+            transition: 0.4s ease;
+            cursor: pointer;
+        }
+        .prevbt {
+            left: 10px;
+        }
+        .nextbt {
+            right: 10px;
+        }
+        .prevbt:hover, .nextbt:hover {
+            background-color: rgb(223, 33, 33);
+        }
+        video {
+            position: fixed;
+             top: 0;
+              bottom: 0;
+             min-width: 100%;
+             min-height: 100%;
+             object-fit:cover;
+                z-index: -1;
+                display: none;
+}
+   
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body >
+
+    
+    <div class="slider-container">
+       
+        
+        <button class="prevbt">&lt;</button>
+        <div class="slider">
+            <div class="slide">
+                <img src="luffy1.png" alt="Luffy">
+               
+            </div>
+            <div class="slide">
+                <img src="zoro1.png" alt="Zoro">
+            </div>
+            <div class="slide">
+                <img src="sanji1.png" alt="Sanji">
+            </div>
+            <div class="slide">
+                <img src="usopp1.png" alt="Usopp">
+            </div>
+            <div class="slide">
+                <img src="nami.png" alt="Luffy">
+            </div>
+            <div class="slide">
+                <img src="chopper.png" alt="Zoro">
+            </div>
+            <div class="slide">
+                <img src="robin.png" alt="Sanji">
+            </div>
+           
+            <div class="slide">
+                <img src="brook.png" alt="Usopp">
+            </div>
+            <div class="slide">
+                <img src="franky.png" alt="Usopp">
+            </div>
+            
+            <audio id="luffy-audio" src="luffyaudio.mp3"></audio>
+            <audio id="zoro-audio" src="zoroaudio.mp3"></audio>
+            <audio id="sanji-audio" src="sanjiaudio.mp3"></audio>
+            
+           
+
+        </div>
+        <button class="nextbt">&gt;</button>
+    </div>
+    <video autoplay muted loop playsinline id="luffy-video" >
+        <source src="luffy.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="zoro-video">
+        <source src="zorovideo1.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="sanji-video" >
+        <source src="sanjivideo1.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="usopp-video" >
+        <source src="usoppvideo.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="nami-video" >
+        <source src="namivideo.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="chopper-video" >
+        <source src="choppervideo.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="robin-video" >
+        <source src="robinvideo.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="brook-video" >
+        <source src="brookvideo.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="franky-video" >
+        <source src="frankyvideo.mp4" type="video/mp4">
+    </video>
+<script>
+    const slidercontainer = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const prevbt = document.querySelector('.prevbt');
+const nextbt = document.querySelector('.nextbt');
+
+
+const audioMap = [
+    document.getElementById('luffy-audio'),
+    document.getElementById('zoro-audio'),
+    document.getElementById('sanji-audio'),
+
+  
+];
+
+const videomap=[
+    document.getElementById('luffy-video'),
+    document.getElementById('zoro-video'),
+    document.getElementById('sanji-video'),
+    document.getElementById('usopp-video'),
+    document.getElementById('nami-video'),
+    document.getElementById('chopper-video'),
+    document.getElementById('robin-video'),
+    document.getElementById('brook-video'),
+    document.getElementById('franky-video')
+];
+
+let currentIndex = 0;
+
+function updateSlider() {
+    slidercontainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    audioMap.forEach((audio,index)=>{
+        if(index==currentIndex){
+            
+            audio.play();
+        }
+        else{
+           
+            audio.pause();
+            audio.currentTime=0;
+        }
+    });
+   videomap.forEach((video,index)=>{
+        if(index==currentIndex){
+            video.style.display="block";
+            video.play();
+        }
+        else{
+            video.style.display="none";
+            video.pause();
+            video.currentTime=0;
+        }
+   });
+}
+
+  updateSlider(); 
+
+nextbt.addEventListener('click', () => {    
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+});
+
+prevbt.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider();
+});
+
+</script>
+</body>
+</html>
