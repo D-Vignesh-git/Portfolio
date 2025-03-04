@@ -81,7 +81,7 @@ nav {
   color: rgb(148, 230, 148);
 }
 
-.icons,.icon1 a {
+.icons,.icon1 a, .icon3 a, .icon2 a{
   font-size: 25px;
   display: flex;
   justify-content: space-around;
@@ -90,9 +90,8 @@ nav {
 }
 
 .icon1 a,
-.icon2,
-.icon3,
-.icon4 {
+.icon2 a,
+.icon3 a{
   background-color: rgb(78, 66, 66);
   padding: 7px;
   border-radius: 50%;
@@ -106,9 +105,9 @@ nav {
 }
 
 .icon1 a:hover,
-.icon2:hover,
-.icon3:hover,
-.icon4:hover {
+.icon2 a:hover,
+.icon3 a:hover
+ {
   background-color: rgba(85, 196, 75, 255);
   transform: scale(1.1);
   transform: translateY(-7px);
