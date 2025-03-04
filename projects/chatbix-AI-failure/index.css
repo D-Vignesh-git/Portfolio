@@ -40,16 +40,15 @@ body{
 }
 
 .user-input{
-    position: absolute;
-    bottom: 0;
    gap:10px;
    display: flex;
+   justify-content: center;
     width: 100%;
     padding: 10px;
 }
 .user-input #user-message{
     width:90%;
-    padding:10px 0;
+    padding:5px 0;
     border-radius: 10px;
     border:1px solid transparent;
     text-align: center;
@@ -202,8 +201,14 @@ gap:20px;
 .incoming-chat-error{
     color: red;
 }
+@media (width<=760px){
+    .chatbox-container{
+        width:80%;
+    }
+}
 @media (width<=425px){
     .chatbox-container{
         width:100%;
     }
 }
+

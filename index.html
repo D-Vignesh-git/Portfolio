@@ -149,6 +149,22 @@
             <a href="/projects/calculator/calculator.html" target="_blank">View Project</a>
           </div>
         </div>
+        <div class="projects-card">
+          <img src="/projects/rps/project-image.png" alt="RPS">
+          <div class="projects-info">
+            <h3>RPS Game</h3>
+            <p>A simple and responsive Rock Paper Scissors game built using HTML, CSS, and JavaScript. The game allows users to play against the computer with real-time updates and dynamic UI feedback. It includes interactive visuals, score tracking, and responsive design for a smooth experience on different devices.</p>
+            <a href="/projects/rps/index.html" target="_blank">View Project</a>
+          </div>
+        </div>
+        <div class="projects-card">
+          <img src="/projects/chatbix-AI-failure/ai-chatbot.png" alt="RPS">
+          <div class="projects-info">
+            <h3>ChatBot</h3>
+            <p>A simple chatbot built with HTML, CSS, and JavaScript, using the free Gemini API to generate responses. It allows users to chat with AI in real time, providing quick and interactive replies. The design is responsive, making it work smoothly on different devices.</p>
+            <a href="/projects/chatbix-AI-failure/index.html" target="_blank">View Project</a>
+          </div>
+        </div>
       </div>
      </div>
        <div class="resume" id="resume">
@@ -184,17 +200,23 @@
 menuBtn.addEventListener("click",(event)=>{
   navBar.classList.toggle("show");
   event.stopPropagation();
+  if (navBar.classList.contains("show")) {
+    menuBtn.textContent = "\u00d7"; 
+  } else {
+    menuBtn.textContent = "☰"; 
+  }
 })
 
 document.body.addEventListener("click",(event)=>{
   if(!navBar.contains(event.target) && !menuBtn.contains(event.target)){
+    menuBtn.textContent="☰";
     navBar.classList.remove("show");
   }
 })
 navlinks.forEach(link=>{
   link.onclick=function removelink(){
     navBar.classList.remove("show");
-    menuBtn.textContent="☰";
+    menuBtn.textContent = "☰";
 
   }
 })
